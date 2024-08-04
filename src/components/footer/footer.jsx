@@ -1,52 +1,61 @@
 import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { BiLogoInstagramAlt } from "react-icons/bi";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import Menu from "../header/menu";
-
 const Footer = () => {
   return (
-    <main>
-      <section className="w-[1920px] h-[425px] flex flex-col items-center pt-16">
-        <div className="w-[1215px] h-[236px] flex ">
-          <div className="w-[289px]">
-            <h1>About</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam
+    <footer className="bg-[#F6F6F7] py-16">
+      <div className="container m-auto">
+        <div className="flex">
+          <div className="flex-1 flex gap-6 flex-col">
+            <h1 className="text-[18px] text-[#181A2A] font-bold">About</h1>
+            <p className="text-[#696A75] w-[280px]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ab
+              dolor, maiores repudiandae dicta quidem mollitia soluta accusamus
+              fugit? Velit magnam consequatur sint. Soluta, laudantium nobis
+              minima debitis labore earum!
             </p>
-            <p className="font-bold">
-              Email :<span> info@jstemplate.ne</span>{" "}
-            </p>
-            <p className="font-bold">
-              Phone :<span> 880 123 456 789</span>{" "}
-            </p>
+            <div className="text-[#696A75]">
+              <p>Email : info@jstemplate.net</p>
+              <p>Phone : 880 123 456 789</p>
+            </div>
           </div>
-          <div className="w-[521px] flex justify-center ">
-            <Menu className=" flex-row" />
+          <div className="flex-1 flex flex-col gap-6 text-[#3B3C4A] items-center">
+            <Menu />
           </div>
-          <div className=" flex gap-3">
+          <div className="flex-1 text-[#3B3C4A] flex gap-4 text-xl">
             <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
+            <BiLogoInstagramAlt />
+            <FaSquareXTwitter />
             <FaLinkedin />
           </div>
         </div>
-        <div className="flex justify-between w-[1215px]">
-          <img
-            className="w-[231px] h-[54px]"
-            src="./images/footer.png"
-            alt=""
-          />
-          <div className="flex gap-3">
-            <p>Terms of Use</p>
-            <p>Privacy Policy</p>
-            <p>Cookie Policy</p>
+        <div className="flex justify-between items-center border-t-[1px] mt-[25px]">
+          <div className="flex items-center">
+            <img
+              className="w-[230px] h-[54px] rounded-full"
+              src="./images/footer.png"
+              alt=""
+            />
+            <div>
+              <div>
+                <span>Blog</span>
+                <span className="font-extrabold">Web</span>
+              </div>
+              <div>© All Rights Reserved.</div>
+            </div>
+          </div>
+          <div>
+            <div className="flex gap-4 text-[#3B3C4A]">
+              <p>Terms of Use</p>
+              <p className="border-x-[1px] px-4">Privacy Policy</p>
+              <p>Cookie Policy</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </footer>
   );
 };
 export default Footer;
