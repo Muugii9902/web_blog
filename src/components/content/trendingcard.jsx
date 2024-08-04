@@ -1,44 +1,20 @@
-const trendcard = [
-  {
-    bg: "/images/trend1.png",
-    button: "button",
-    text: "The Impact of Technology on the Workplace: How Technology is Changing",
-  },
-  {
-    bg: <img />,
-    button: "button",
-    text: "The Impact of Technology on the Workplace: How Technology is Changing",
-  },
-  {
-    bg: <img src="/images/trend1.png" />,
-    button: "button",
-    text: "The Impact of Technology on the Workplace: How Technology is Changing",
-  },
-  {
-    bg: <img src="/images/trend1.png" />,
-    button: "button",
-    text: "The Impact of Technology on the Workplace: How Technology is Changing",
-  },
-  {
-    bg: <img src="/images/trend1.png" />,
-    button: "button",
-    text: "The Impact of Technology on the Workplace: How Technology is Changing",
-  },
-];
-const TrendingCard = () => {
+const TrendingCard = ({ image, type, text }) => {
   return (
-    <div className="flex">
-      {trendcard.map((card, index) => (
-        <div
-          key={index}
-          className="bg-cover bg-center w-[293px] h-[320px]"
-          style={{ backgroundImage: `url(${card.bg})` }}
-        >
-          <button>{card.button}</button>
-          <p>{card.text}</p>
+    <>
+      <div className="p-0 relative">
+        <div>
+          <button className="py-1 px-2.5 rounded-lg bg-[#4B6BFB] text-white mb-4 font-medium">
+            {type}
+          </button>
+          <p className="text-white text-lg font-semibold">{text}</p>
         </div>
-      ))}
-    </div>
+        <img
+          className="rounded-xl h-[320px] object-cover brightness-[0.65] "
+          src={image}
+          alt="cover"
+        />
+      </div>
+    </>
   );
 };
 export default TrendingCard;

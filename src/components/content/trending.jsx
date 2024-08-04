@@ -1,5 +1,5 @@
 import LabelTag from "../label-tag";
-import TrendingCard from "./trendingcard";
+import TrendingCard from "./trendingarr";
 
 const Trending = () => {
   return (
