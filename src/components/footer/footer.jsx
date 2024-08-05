@@ -38,13 +38,6 @@ const Footer = () => {
               src="./images/footer.png"
               alt=""
             />
-            <div>
-              <div>
-                <span>Blog</span>
-                <span className="font-extrabold">Web</span>
-              </div>
-              <div>© All Rights Reserved.</div>
-            </div>
           </div>
           <div>
             <div className="flex gap-4 text-[#3B3C4A]">

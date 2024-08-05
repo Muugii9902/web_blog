@@ -63,25 +63,35 @@ const allpost = [
     text: "The Impact of Technology on the Workplace: How Technology is Changing",
     date: "August 20, 2022",
   },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/3087/05a3/0ba138a3797a763d4510333166532abb?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FbAZzrUxALXF5UVCXFHmF9p1BNTAKiC8mEjasUk-nQ1vK8Icu8wd~CLYmvPmEVG02KsKx5B1tMKjkKJfUzoMNhUX84fs7cDoVu9R7pvPvvgbUCVHocg2r3T3b5qjb-5wnto6hovCRc7IwQDlJVf81At6Pj-zHTxVHjvXmB7Kb3aqqgl47kC2n8aThGx0RWAUFjpHC7o3w4ayygTq4recyMdZyirH6SyYHy4HMHcloZpDFCkuQExqiFoJQlcx9nwhvqd~fi9M7CZf-G~4K~z4Ejzu8VjKYJti~9pubB-V3rqcXvHii~8YlIJJfx3h9fO9f7Af3b78vOtvl~ZAIbRlSQ__",
+    type: "Technology",
+    text: "The Impact of Technology on the Workplace: How Technology is Changing",
+    date: "August 20, 2022",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/9cba/0115/47643788a57b79a4aa1d6c6db76208a5?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oA77WUscbW1tjfvUkCKFKPcKd-wDLTiEs1NcNOSNy4sZoTkuQ2gd46m5pqRIyPURUzpQjzoX-s9cvJy4Uv~0DhI~l2eqrGP9cKAE8fdZid66~y0gG5z5njXO11roF81rePuJbMiHnGLxyT8-gJVK4vEcCLEwJPvLa4gHd8xwQGRFthUwfmWmMvAaoU~UYci8BBZdrzk7H~gTSAI78sbAJzoCGy5kNUh5Afao3hZxY42H07ckZFLLTR6AeCajn-f1AHH70AKtEJTl7PVLhBSB3ieg3cvhPmXMw1f3b~5Il~lTDw3EW-18bY1jvbukCEW2s3dIugeHLyjCvhHGdDxoGw__",
+    type: "Technology",
+    text: "The Impact of Technology on the Workplace: How Technology is Changing",
+    date: "August 20, 2022",
+  },
+  {
+    image:
+      "https://s3-alpha-sig.figma.com/img/dbae/ead3/16e4297057a78fcd78323914d00b0bf8?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=drS~q33SfPUvUg1BD76yTWUvbCevxnvk4JuGAIg8VDFgxV-pojUGqQc4WpThwW0mBu3T7zEtyG7JkduX9qU2oewXozDH7bqxYWtCKe2AKMRoC8uq2KOOLz4wVH3y-x5yhezOSoQYB4cSr3USs6ZqlaepZqcuTG3OqyKRaYsyjCmdnW~Q-rEdQDzC~E4huxFUpaPJOWPVMnCsmpZiyNJugN4CN5buSIvDcaWpbwn-hVM2X5GTE9wmUnHs5~RnEbtsRdP~aDxrkRHdtHuWCk3wKcSRfBdh7Ka214Zm86-eHhpQdZLqxKOtVE46yW3EpDhrcdAfXsaOfcs2fymL~vrgFg__",
+    type: "Technology",
+    text: "The Impact of Technology on the Workplace: How Technology is Changing",
+    date: "August 20, 2022",
+  },
 ];
-const BlogData = () => {
+const AllBlogpost = () => {
   return (
     <>
       <div className="container m-auto flex flex-col gap-8 mb-24">
         <h1 className="text-2xl font-bold text-black font-sans">
           All blog post
         </h1>
-        <nav className="flex justify-between font-bold text-xs">
-          <dev className="flex gap-5 font-bold text-xs">
-            <a href="">All</a>
-            <a href="">Design</a>
-            <a href="">Travel</a>
-            <a href="">Fashion</a>
-            <a href="">Technology</a>
-            <a href="">Branding</a>
-          </dev>
-          <a href="">View All</a>
-        </nav>
         <div className="grid grid-cols-3 gap-5">
           {allpost.map((data) => {
             return (
@@ -111,4 +121,4 @@ const BlogData = () => {
     </>
   );
 };
-export default BlogData;
+export default AllBlogpost;

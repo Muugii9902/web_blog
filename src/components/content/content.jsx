@@ -1,3 +1,4 @@
+import BlogData from "../allpost/blogarr";
 import Maincontent from "./maincontent";
 import Trending from "./trending";
 
@@ -6,6 +7,7 @@ const Content = () => {
     <>
       <Maincontent />
       <Trending />
+      <BlogData />
     </>
   );
 };

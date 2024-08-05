@@ -1,7 +1,7 @@
 const menuList = [
   { label: "Home", link: "/" },
-  { label: "Blog", link: "/#about" },
-  { label: "Content", link: "/#work" },
+  { label: "Blog", link: "/#Blog" },
+  { label: "Contact", link: "/#ContactUS" },
 ];
 const Menu = () => {
   return (
