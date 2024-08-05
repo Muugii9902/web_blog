@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import allBlogPost from "@/components/allpost/blog";
 
 import Content from "@/components/content/content";
 
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main>
       <Content />
+      <allBlogPost />
     </main>
   );
 }

@@ -3,8 +3,7 @@ import TrendingCard from "./trendingarr";
 
 const Trending = () => {
   return (
-    <section className="container h-[390px] m-auto py-[100px]">
-      <LabelTag />
+    <section className="container  m-auto py-[100px]">
       <TrendingCard />
     </section>
   );
