@@ -104,7 +104,7 @@ const BlogData = () => {
         </div>
         <div className="text-center">
           <button className="border text-[#696A75] py-3 px-5 rounded-xl ">
-            Load More
+            Load More...
           </button>
         </div>
       </div>
