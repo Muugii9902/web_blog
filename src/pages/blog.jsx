@@ -18,14 +18,14 @@ const Blog = (article) => {
   console.log("data", articles);
   return (
     <>
-      <Link href={"/blog" + article.id}>
-        <div className="container m-auto flex flex-col gap-8 mb-24">
-          <h1 className="text-2xl font-bold text-black font-sans">
-            All blog post
-          </h1>
-          <div className="grid grid-cols-3 gap-5">
-            {articles.map((data) => {
-              return (
+      <div className="container m-auto flex flex-col gap-8 mb-24">
+        <h1 className="text-2xl font-bold text-black font-sans">
+          All blog post
+        </h1>
+        <div className="grid grid-cols-3 gap-5">
+          {articles.map((data) => {
+            return (
+              <Link href={"/blog" + data.id}>
                 <div className="p-4 flex-col gap4 border rounded-xl">
                   <img
                     className="h-[360px] w-[100%] object-center object-cover rounded-xl"
@@ -40,21 +40,21 @@ const Blog = (article) => {
                   <p className="text-2xl font-semibold">{data.title}</p>
                   <p className="text-[#97989F]">{data.published_at}</p>
                 </div>
-              );
-            })}
-          </div>
-          <div className="text-center">
-            <button
-              className="border text-[#696A75] py-3 px-5 rounded-xl "
-              // onClick={() => {
-              //   setchange();
-              // }}
-            >
-              Load More
-            </button>
-          </div>
+              </Link>
+            );
+          })}
         </div>
-      </Link>
+        <div className="text-center">
+          <button
+            className="border text-[#696A75] py-3 px-5 rounded-xl "
+            // onClick={() => {
+            //   setchange();
+            // }}
+          >
+            Load More
+          </button>
+        </div>
+      </div>
     </>
   );
 };
