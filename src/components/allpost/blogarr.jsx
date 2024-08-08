@@ -4,18 +4,28 @@ import { useEffect, useState } from "react";
 const BlogData = () => {
   const [articles, setArticles] = useState([]);
   const [change, setchange] = useState(0);
+  const [count, setCount] = useState(1);
 
   const getArticleData = async () => {
     const response = await fetch(
-      "https://dev.to/api/articles?page=1&per_page=9"
+      `https://dev.to/api/articles?page=${count}&per_page=3`
     );
     const data = await response.json();
-    setArticles(data);
+    setArticles((prevArticles) => {
+      console.log("prevArticles", prevArticles);
+      // Check if the articles are already present
+      const newArticles = data.filter(
+        (article) =>
+          !prevArticles.some((prevArticle) => prevArticle.id === article.id)
+      );
+      return [...prevArticles, ...newArticles];
+    });
   };
   useEffect(() => {
-    getArticleData([change]);
-  }, []);
+    getArticleData();
+  }, [count]);
 
+  console.log("articles", articles);
   return (
     <>
       <div className="container m-auto flex flex-col gap-8 mb-24">
@@ -36,7 +46,7 @@ const BlogData = () => {
         <div className="grid grid-cols-3 gap-5">
           {articles.map((data) => {
             return (
-              <Link href={"/blog" + data.id}>
+              <Link href={"/blog/" + data.id}>
                 <div className="p-4 flex-col gap4 border rounded-xl">
                   <img
                     className="h-[360px] w-[100%] object-center object-cover rounded-xl"
@@ -58,7 +68,7 @@ const BlogData = () => {
         <div className="text-center">
           <button
             className="border text-[#696A75] py-3 px-5 rounded-xl "
-            onClick={() => setchange(change + 1)}
+            onClick={() => setCount(count + 1)}
           >
             Load More
           </button>
