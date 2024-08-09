@@ -8,7 +8,7 @@ const BlogData = () => {
 
   const getArticleData = async () => {
     const response = await fetch(
-      `https://dev.to/api/articles?page=${count}&per_page=3`
+      `https://dev.to/api/articles?page=${count}&per_page=9`.startsWith()
     );
     const data = await response.json();
     setArticles((prevArticles) => {
