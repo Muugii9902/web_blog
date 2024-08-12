@@ -14,8 +14,8 @@ const ArticleDetail = () => {
     getArticleById(query.id);
   }, []);
   return (
-    <div className="p-10">
-      <div className="flex">
+    <div className="p-10 w-[800px] m-auto">
+      <div className="flex justify-center">
         <img
           className="w-10 h-10 rounded-full"
           src={ArticleDetail?.user.profile_image}
