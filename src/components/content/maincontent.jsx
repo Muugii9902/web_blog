@@ -5,7 +5,7 @@ const Maincontent = () => {
   const [articles, setArticles] = useState([]);
   const [index, setIndex] = useState(0);
   const getArticleData = async () => {
-    const res = await fetch("https://dev.to/api/articles?page=1&per_page=9");
+    const res = await fetch("https://dev.to/api/articles?page=1&per_page=30");
     const data = await res.json();
     setArticles(data);
   };
