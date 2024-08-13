@@ -5,14 +5,14 @@ import { useContext, useEffect, useState } from "react";
 const Blog = () => {
   const [articles, setArticles] = useState([]);
   const [change, setchange] = useState(0);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(9);
 
   const { searchValue } = useContext(SearchContext);
 
   const getArticleData = async () => {
     console.log("GET_DATA");
     const response = await fetch(
-      `https://dev.to/api/articles?page=${count}&per_page=3`
+      `https://dev.to/api/articles?page=${count}&per_page=9`
     );
     const data = await response.json();
     setArticles((prevArticles) => {
