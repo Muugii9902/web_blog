@@ -10,32 +10,27 @@ const Blog = () => {
   const { searchValue } = useContext(SearchContext);
 
   const getArticleData = async () => {
+    console.log("GET_DATA");
     const response = await fetch(
-      `https://dev.to/api/articles?page=${count}&per_page=9`
+      `https://dev.to/api/articles?page=${count}&per_page=3`
     );
     const data = await response.json();
     setArticles((prevArticles) => {
-      console.log("prevArticles", prevArticles);
-      // Check if the articles are already present
-      const newArticles = data.filter(
-        (article) =>
-          !prevArticles.some((prevArticle) => prevArticle.id === article.id)
-      );
-      return [...prevArticles, ...newArticles];
+      return [...prevArticles, ...data];
     });
   };
+
   useEffect(() => {
     getArticleData();
   }, [count]);
 
-  const finder = articles.filter((data) =>
+  const finder = articles?.filter((data) =>
     data.title.toLowerCase().includes(searchValue.toLowerCase())
   );
-  console.log("finder", finder);
 
-  console.log("articles", articles);
   return (
     <>
+      {}
       <div className="container m-auto flex flex-col gap-8 mb-24">
         <h2>hailt:{searchValue}</h2>
         <h1 className="text-2xl font-bold text-black font-sans">
@@ -53,7 +48,7 @@ const Blog = () => {
           <a href="">View All</a>
         </nav>
         <div className="grid grid-cols-3 gap-5">
-          {finder.map((data) => {
+          {finder?.map((data) => {
             return (
               <Link href={"/blog/" + data.id}>
                 <div className="p-4 flex-col gap4 border rounded-xl">
