@@ -3,26 +3,27 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 
 const Blog = () => {
-  const [articles, setArticles] = useState([]);
-  const [change, setchange] = useState(0);
-  const [count, setCount] = useState(9);
+  // const [articles, setArticles] = useState([]);
+  // const [change, setchange] = useState(0);
+  // const [count, setCount] = useState(9);
 
-  const { searchValue } = useContext(SearchContext);
+  const { searchValue, handleLoadmore, articles } = useContext(SearchContext);
+  console.log("dasdadsa", articles);
 
-  const getArticleData = async () => {
-    console.log("GET_DATA");
-    const response = await fetch(
-      `https://dev.to/api/articles?page=${count}&per_page=9`
-    );
-    const data = await response.json();
-    setArticles((prevArticles) => {
-      return [...prevArticles, ...data];
-    });
-  };
+  // const getArticleData = async () => {
+  //   console.log("GET_DATA");
+  //   const response = await fetch(
+  //     `https://dev.to/api/articles?page=${count}&per_page=9`
+  //   );
+  //   const data = await response.json();
+  //   setArticles((prevArticles) => {
+  //     return [...prevArticles, ...data];
+  //   });
+  // };
 
-  useEffect(() => {
-    getArticleData();
-  }, [count]);
+  // useEffect(() => {
+  //   getArticleData();
+  // }, [count]);
 
   const finder = articles?.filter((data) =>
     data.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -72,7 +73,7 @@ const Blog = () => {
         <div className="text-center">
           <button
             className="border text-[#696A75] py-3 px-5 rounded-xl "
-            onClick={() => setCount(count + 1)}
+            onClick={() => handleLoadmore()}
           >
             Load More
           </button>
