@@ -1,31 +1,37 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SearchContext } from "@/provider/sreach-provider";
 
 const BlogData = () => {
-  const [articles, setArticles] = useState([]);
-  const [change, setchange] = useState(0);
-  const [count, setCount] = useState(1);
+  const { searchValue, articles, handleLoadmore } = useContext(SearchContext);
+  console.log("dasdadsa", articles);
+  const finder = articles?.filter((data) =>
+    data.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
-  const getArticleData = async () => {
-    const response = await fetch(
-      `https://dev.to/api/articles?page=${count}&per_page=9`
-    );
-    const data = await response.json();
-    setArticles((prevArticles) => {
-      console.log("prevArticles", prevArticles);
-      // Check if the articles are already present
-      const newArticles = data.filter(
-        (article) =>
-          !prevArticles.some((prevArticle) => prevArticle.id === article.id)
-      );
-      return [...prevArticles, ...newArticles];
-    });
-  };
-  useEffect(() => {
-    getArticleData();
-  }, [count]);
+  // const [articles, setArticles] = useState([]);
+  // const [change, setchange] = useState(0);
+  // const [count, setCount] = useState(1);
 
-  console.log("articles", articles);
+  // const getArticleData = async () => {
+  //   const response = await fetch(
+  //     `https://dev.to/api/articles?page=${count}&per_page=9`
+  //   );
+  //   const data = await response.json();
+  //   setArticles((prevArticles) => {
+  //     console.log("prevArticles", prevArticles);
+  //     // Check if the articles are already present
+  //     const newArticles = data.filter(
+  //       (article) =>
+  //         !prevArticles.some((prevArticle) => prevArticle.id === article.id)
+  //     );
+  //     return [...prevArticles, ...newArticles];
+  //   });
+  // };
+  // useEffect(() => {
+  //   getArticleData();
+  // }, [count]);
+
   return (
     <>
       <div className="container m-auto flex flex-col gap-8 mb-24">
@@ -44,7 +50,7 @@ const BlogData = () => {
           <a href="">View All</a>
         </nav>
         <div className="grid grid-cols-3 gap-5">
-          {articles.map((data) => {
+          {finder.map((data) => {
             return (
               <Link href={"/blog/" + data.id}>
                 <div className="p-4 flex-col gap4 border rounded-xl">
@@ -68,7 +74,7 @@ const BlogData = () => {
         <div className="text-center">
           <button
             className="border text-[#696A75] py-3 px-5 rounded-xl "
-            onClick={() => setCount(count + 1)}
+            onClick={() => handleLoadmore()}
           >
             Load More
           </button>

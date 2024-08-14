@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify/dist/components";
+import { toast } from "react-toastify";
 
 export const SearchContext = createContext(null);
 
