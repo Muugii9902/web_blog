@@ -22,7 +22,7 @@ const SreachProvider = ({ children }) => {
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      toast.success("Алдаа гарлаа. Та дахин оролдоно уу");
+      toast.error("Алдаа гарлаа. Та дахин оролдоно уу");
     }
   };
   const handleLoadmore = () => {
