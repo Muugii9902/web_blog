@@ -28,7 +28,8 @@ const Maincontent = () => {
           {articles.map((art) => {
             return (
               <div
-                className={`translate-x-[-${index}00%] transition-all ease-in-out duration-500`}
+                className={`transition-all ease-in-out duration-500`}
+                style={{ transform: `translateX(-${index}00%)` }}
               >
                 <div
                   className="container m-auto h-[651px] w-[1600px] rounded-xl bg-cover bg-center bg-blend-darken bg-[rgba(0,0,0,0.3)] p-3 flex items-end"
