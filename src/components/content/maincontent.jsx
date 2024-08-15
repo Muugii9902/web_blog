@@ -31,7 +31,7 @@ const Maincontent = () => {
                 className={`translate-x-[-${index}00%] transition-all ease-in-out duration-500`}
               >
                 <div
-                  className="container m-auto h-[651px] w-[1600px] rounded-xl bg-cover bg-center bg-blend-darken bg-[rgba(0,0,0,0.5)] p-3 flex items-end"
+                  className="container m-auto h-[651px] w-[1600px] rounded-xl bg-cover bg-center bg-blend-darken bg-[rgba(0,0,0,0.3)] p-3 flex items-end"
                   style={{ backgroundImage: `url(${art.social_image})` }}
                 >
                   <div className="h-[50%] w-[50%] bg-white rounded-xl p-10 border">
